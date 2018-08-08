@@ -2,7 +2,7 @@ from django.conf.urls import url
 from api.views import course,degree_course,\
     degree_course_scholarship,degree_model,\
     degree_course_recommend,question,CourseOutline,CourseChapter
-
+from api.views import auth,shoppingcar
 
 
 urlpatterns = [
@@ -15,6 +15,9 @@ urlpatterns = [
     url(r'f/',question.QuestionView.as_view()),
     url(r'g/',CourseOutline.CourseOutlineRecommendView.as_view()),
     url(r'h/',CourseChapter.CourseChapterView.as_view()),
+    url(r'auth/$', auth.AuthView.as_view({'post': 'login'})),
+    url(r'shopping_car/$',shoppingcar.ShoppingView.as_view({'get':'list','post':'create'})),
+    url(r'shopping_car/(?P<pk>\d+)/$',shoppingcar.ShoppingView.as_view({'get':'retrieve','put':'update','delete':'destroy'}))
 ]
 # from rest_framework.routers import DefaultRouter
 #

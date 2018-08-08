@@ -26,4 +26,6 @@ class DegreeCourseView(APIView):
         except Exception as e:
             ret.code = 500
             ret.error = '获取失败，葱头再来'
+        #第一种方式
+        # return Response(ret.dict,headers={'Access-Control-Allow-Origin':'http://localhost:8080'})
         return Response(ret.dict)
