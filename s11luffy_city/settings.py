@@ -130,7 +130,8 @@ REST_FRAMEWORK={
     'version_param':'version',
     'DEFAULT_VERSION':'v1',
     'ALLOWED_VERSIONS':['v1','v2'],
-    'PAGE_SIZE':21
+    'PAGE_SIZE':21,
+    'DEFAULT_PARSER_CLASSES': ['rest_framework.parsers.JSONParser', ]
 }
 CORS_METHODS='POST'
 CORS_HEADERS='ljr,Content-Type'
